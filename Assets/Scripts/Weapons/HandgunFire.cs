@@ -7,21 +7,30 @@ public class HandgunFire : MonoBehaviour
     public GameObject theGun;
     public GameObject muzzleFlash;
     public AudioSource gunFireSound;
+    public AudioSource gunEmptySound;
 
     private bool isFiring;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !isFiring)
+        if (Input.GetButtonDown("Fire1"))
         {
-            StartCoroutine(FireHandgun());
+            if (GlobalAmmo.handgunAmmo <= 0)
+            {
+                gunEmptySound.Play();
+            }
+            else if (!isFiring)
+            {
+                StartCoroutine(FireHandgun());
+            }
         }
     }
 
     IEnumerator FireHandgun()
     {
         isFiring = true;
+        GlobalAmmo.handgunAmmo--;
         theGun.GetComponent<Animator>().Play("HandgunFire");
         muzzleFlash.SetActive(true);
         gunFireSound.Play();
