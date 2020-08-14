@@ -10,6 +10,7 @@ public class HandgunAmmoPickup : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         ammoClip.SetActive(false);
+        GetComponent<BoxCollider>().enabled = false;
         ammoPickupSound.Play();
 
         GlobalAmmo.handgunAmmo += 10;
