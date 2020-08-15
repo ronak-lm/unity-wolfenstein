@@ -6762,7 +6762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 441240, guid: c544c58272b03294ebe7a1babe149792, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6417968, guid: c544c58272b03294ebe7a1babe149792, type: 3}
       propertyPath: m_Convex
