@@ -16,6 +16,8 @@ public class EnemyAI : MonoBehaviour
     public int genHurt;
     public AudioSource[] hurtSound;
 
+    public GameObject hurtFlash;
+
     void Update()
     {
         RaycastHit hit;
@@ -44,7 +46,9 @@ public class EnemyAI : MonoBehaviour
 
         GlobalHealth.healthValue -= 5;
 
+        hurtFlash.SetActive(true);
         yield return new WaitForSeconds(0.2f);
+        hurtFlash.SetActive(false);
         genHurt = Random.Range(0, 3);
         hurtSound[genHurt].Play();
 
