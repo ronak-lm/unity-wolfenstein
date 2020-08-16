@@ -9,6 +9,9 @@ public class HandgunFire : MonoBehaviour
     public AudioSource gunFireSound;
     public AudioSource gunEmptySound;
 
+    public float targetDistance;
+    public int damageAmount = 5;
+
     private bool isFiring;
 
     // Update is called once per frame
@@ -31,6 +34,14 @@ public class HandgunFire : MonoBehaviour
     {
         isFiring = true;
         GlobalAmmo.handgunAmmo--;
+
+        RaycastHit theShot;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out theShot))
+        {
+            targetDistance = theShot.distance;
+            theShot.transform.SendMessage("DamageEnemy", damageAmount, SendMessageOptions.DontRequireReceiver);
+        }
+
         theGun.GetComponent<Animator>().Play("HandgunFire");
         muzzleFlash.SetActive(true);
         gunFireSound.Play();

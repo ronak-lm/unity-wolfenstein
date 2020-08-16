@@ -3592,6 +3592,8 @@ MonoBehaviour:
   muzzleFlash: {fileID: 1261850034}
   gunFireSound: {fileID: 1112118303}
   gunEmptySound: {fileID: 109537787}
+  targetDistance: 0
+  damageAmount: 5
 --- !u!1 &599181246
 GameObject:
   m_ObjectHideFlags: 0
@@ -10970,6 +10972,7 @@ GameObject:
   - component: {fileID: 2025667328}
   - component: {fileID: 2020223520}
   - component: {fileID: 2025498401}
+  - component: {fileID: 2025498403}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -11006,6 +11009,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2025498403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025498400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867d7ee45d393794288d70f0c2377bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theEnemy: {fileID: 2025498240}
+  enemyAI: {fileID: 1590276894}
+  enemyHealth: 20
+  enemyDead: 0
 --- !u!1 &2025498404
 GameObject:
   m_ObjectHideFlags: 0
