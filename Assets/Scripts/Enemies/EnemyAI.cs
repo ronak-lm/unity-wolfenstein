@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -13,6 +12,9 @@ public class EnemyAI : MonoBehaviour
     public bool isFiring = false;
 
     public float fireRate = 1f;
+
+    public int genHurt;
+    public AudioSource[] hurtSound;
 
     void Update()
     {
@@ -41,6 +43,10 @@ public class EnemyAI : MonoBehaviour
         lookingAtPlayer = true;
 
         GlobalHealth.healthValue -= 5;
+
+        yield return new WaitForSeconds(0.2f);
+        genHurt = Random.Range(0, 3);
+        hurtSound[genHurt].Play();
 
         yield return new WaitForSeconds(fireRate);
         isFiring = false;
