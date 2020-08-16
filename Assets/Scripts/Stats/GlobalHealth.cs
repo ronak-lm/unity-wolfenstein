@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GlobalHealth : MonoBehaviour
@@ -14,6 +15,10 @@ public class GlobalHealth : MonoBehaviour
 
     void Update()
     {
+        if (healthValue <= 0)
+        {
+            SceneManager.LoadScene("LevelRecycle");
+        }
         internalHealth = healthValue;
         healthDisplay.GetComponent<Text>().text = "" + healthValue + "%";
     }
