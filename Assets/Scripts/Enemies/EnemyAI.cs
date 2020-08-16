@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    public GameObject theEnemy;
+
     public string hitTag;
     public bool lookingAtPlayer = false;
-    public GameObject theEnemy;
+
+    public AudioSource fireSound;
+    public bool isFiring = false;
+
+    public float fireRate = 1f;
 
     void Update()
     {
@@ -15,15 +21,26 @@ public class EnemyAI : MonoBehaviour
         {
             hitTag = hit.transform.tag;
         }
-        if (hitTag == "Player")
+        if (hitTag == "Player" && isFiring == false)
         {
-            theEnemy.GetComponent<Animator>().Play("FirePistol");
-            lookingAtPlayer = true;
+            StartCoroutine(EnemyFire());
         }
-        else
+        if (hitTag != "Player")
         {
             theEnemy.GetComponent<Animator>().Play("Idle");
             lookingAtPlayer = false;
         }
+    }
+
+    IEnumerator EnemyFire()
+    {
+        isFiring = true;
+        theEnemy.GetComponent<Animator>().Play("FirePistol", -1, 0);
+        theEnemy.GetComponent<Animator>().Play("FirePistol");
+        fireSound.Play();
+        lookingAtPlayer = true;
+
+        yield return new WaitForSeconds(fireRate);
+        isFiring = false;
     }
 }
