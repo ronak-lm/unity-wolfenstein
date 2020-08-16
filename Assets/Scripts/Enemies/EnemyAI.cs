@@ -40,6 +40,8 @@ public class EnemyAI : MonoBehaviour
         fireSound.Play();
         lookingAtPlayer = true;
 
+        GlobalHealth.healthValue -= 5;
+
         yield return new WaitForSeconds(fireRate);
         isFiring = false;
     }
