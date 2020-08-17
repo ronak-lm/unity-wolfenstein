@@ -11,13 +11,18 @@ public class EnemyDeath : MonoBehaviour
 
     void DamageEnemy(int damageAmount)
     {
-        enemyHealth -= damageAmount;
-        if (enemyHealth <= 0)
+        if (enemyAI.activeInHierarchy)
         {
-            enemyDead = true;
-            theEnemy.GetComponent<Animator>().Play("Death");
-            theEnemy.GetComponent<LookPlayer>().enabled = false;
-            enemyAI.SetActive(false);
+            enemyHealth -= damageAmount;
+            if (enemyHealth <= 0)
+            {
+                enemyDead = true;
+                theEnemy.GetComponent<Animator>().Play("Death");
+                theEnemy.GetComponent<LookPlayer>().enabled = false;
+                enemyAI.SetActive(false);
+
+                GlobalScore.scoreValue += 100;
+            }
         }
     }
 }
