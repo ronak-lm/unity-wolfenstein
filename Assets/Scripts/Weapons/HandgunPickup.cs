@@ -7,6 +7,7 @@ public class HandgunPickup : MonoBehaviour
     public GameObject fakeHandgun;
     public AudioSource handgunPickupSound;
     public GameObject notificationDisplay;
+    public GameObject pistolImage;
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,5 +19,7 @@ public class HandgunPickup : MonoBehaviour
         notificationDisplay.SetActive(false);
         notificationDisplay.GetComponent<Text>().text = "HANDGUN";
         notificationDisplay.SetActive(true);
+
+        pistolImage.SetActive(true);
     }
 }
