@@ -22,6 +22,7 @@ public class EnemyDeath : MonoBehaviour
                 enemyAI.SetActive(false);
 
                 GlobalScore.scoreValue += 100;
+                GlobalComplete.enemyCount++;
             }
         }
     }

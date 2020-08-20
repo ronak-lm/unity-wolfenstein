@@ -12,6 +12,7 @@ public class GoldCollect : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         GlobalScore.scoreValue += 500;
+        GlobalComplete.treasureCount++;
 
         goldIngots.SetActive(false);
         collectSound.Play();
