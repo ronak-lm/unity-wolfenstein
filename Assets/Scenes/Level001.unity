@@ -29181,6 +29181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e05e628f053b44699e35e848cecefc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifePickupSound: {fileID: 907909255}
 --- !u!1 &1660221676
 GameObject:
   m_ObjectHideFlags: 0
