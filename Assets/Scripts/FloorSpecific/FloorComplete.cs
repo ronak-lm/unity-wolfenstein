@@ -8,6 +8,7 @@ public class FloorComplete : MonoBehaviour
     public GameObject fadeOut;
     public GameObject completeLevel;
     public GameObject thePlayer;
+    public GameObject timer;
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,5 +22,6 @@ public class FloorComplete : MonoBehaviour
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(2);
         completeLevel.SetActive(true);
+        timer.SetActive(false);
     }
 }
