@@ -9823,7 +9823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -16313,6 +16313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEnemy: {fileID: 1849354346}
   enemyAI: {fileID: 1559307267}
+  hurtFlash: {fileID: 116758981}
   enemyHealth: 20
   enemyDead: 0
 --- !u!65 &913595056
@@ -27337,7 +27338,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546405575}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1546405578
 Camera:
   m_ObjectHideFlags: 0
@@ -29912,6 +29913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEnemy: {fileID: 335469654}
   enemyAI: {fileID: 1626077931}
+  hurtFlash: {fileID: 116758981}
   enemyHealth: 20
   enemyDead: 0
 --- !u!65 &1700195217
@@ -31965,6 +31967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEnemy: {fileID: 1555902322}
   enemyAI: {fileID: 1926450322}
+  hurtFlash: {fileID: 116758981}
   enemyHealth: 20
   enemyDead: 0
 --- !u!65 &1819138691
@@ -35546,6 +35549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theEnemy: {fileID: 2025498240}
   enemyAI: {fileID: 1590276894}
+  hurtFlash: {fileID: 116758981}
   enemyHealth: 20
   enemyDead: 0
 --- !u!1 &2025498404
